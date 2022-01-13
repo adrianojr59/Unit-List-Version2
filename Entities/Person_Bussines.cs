@@ -10,10 +10,6 @@ namespace List_Version2.Entities
     {
         public Person_Bussines(string name, string cpfecnpj) : base(name, cpfecnpj)
         {
-
-
-
-
              }
 
         public Person_Bussines() { }

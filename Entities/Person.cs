@@ -36,7 +36,10 @@ namespace List_Version2.Entities
             Person other = obj as Person;
 
 
-            return Name == other.Name && CpfeCnpj == other.CpfeCnpj;
+            return Name.Equals(other.Name, StringComparison.CurrentCultureIgnoreCase) 
+          && CpfeCnpj.Equals(other.CpfeCnpj,StringComparison.CurrentCultureIgnoreCase);
+
+            
 
 
         }
@@ -44,7 +47,7 @@ namespace List_Version2.Entities
 
         public override int GetHashCode()
         {
-            return Name.GetHashCode() + CpfeCnpj.GetHashCode();
+            return Name.ToUpper().GetHashCode()+CpfeCnpj.ToUpper().GetHashCode();
         }
 
         public override string ToString()
@@ -62,7 +65,7 @@ namespace List_Version2.Entities
 
         public int CompareTo(Person? other)
         {
-           return Name.CompareTo(other.Name);   
+           return CpfeCnpj.CompareTo(other.CpfeCnpj);   
         }
     }
 }
