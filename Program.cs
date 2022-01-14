@@ -6,18 +6,22 @@ Person person = new Person();
 
 Person_Bussines _Bussines = new Person_Bussines();
 
-
-person.AddHashList(new Person("Bob", "128391239"));
-
-person.AddHashList(new Person("bob", "128391239"));
-
-_Bussines.AddHashList(new Person_Bussines("junior","328473243284"));
 _Bussines.AddHashList(new Person_Bussines("junior", "32328473243284"));
+
+person.AddHashList(new Person("Bob", "323284732432843"));
+
+
+
+
 
 
 SortedSet<Person>ListAll = new SortedSet<Person>(person.ListHash);ListAll.UnionWith(_Bussines.ListHash);
 
-ListView(ListAll);
+
+var people = ListAll.OrderBy(c => c.CpfeCnpj); // ordernar por cpf e cnpj ou pelo nome 
+
+
+ListView(people);
 
 static void ListView <T>(IEnumerable<T> list)
 {

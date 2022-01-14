@@ -8,9 +8,9 @@ namespace List_Version2.Entities
 {
     internal class Person:IComparable<Person>
     {
-         protected string Name { get; set; }    
+         public  string Name { get; set; }    
 
-        protected string CpfeCnpj { get; set; }
+        public  string CpfeCnpj { get; set; }
 
         public Person() { }
 
@@ -65,7 +65,7 @@ namespace List_Version2.Entities
 
         public int CompareTo(Person? other)
         {
-           return CpfeCnpj.CompareTo(other.CpfeCnpj);   
+            return Name.CompareTo(other.Name);
         }
     }
 }
