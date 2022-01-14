@@ -28,9 +28,11 @@ SortedSet<Person>ListAll = new SortedSet<Person>(person.ListHash);ListAll.UnionW
 //people.RemoveAll(p => p.Name.Length > 2);
 
 
+List<string> result =   ListAll.Select (c => c.Name.ToUpper()).ToList();  // exibir somente os nomes por exemplo
 
 
-ListView(ListAll);
+
+ListView(result);
 
 static void ListView <T>(IEnumerable<T> view)
 {
@@ -39,4 +41,8 @@ static void ListView <T>(IEnumerable<T> view)
         Console.WriteLine(item);
     }
 }
+
+
+// lista somente dos nomes por exemplo
+
 
