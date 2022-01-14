@@ -21,7 +21,13 @@ SortedSet<Person>ListAll = new SortedSet<Person>(person.ListHash);ListAll.UnionW
 var people = ListAll.OrderBy(c => c.CpfeCnpj); // ordernar por cpf e cnpj ou pelo nome 
 
 
-ListView(people);
+
+ListAll.ToList().ForEach(c => c.CpfeCnpj += 22); // adicionar em todos cadastro 22 ao fim  de cada numero ideal para colocar promoção etc
+
+
+
+
+ListView(ListAll);
 
 static void ListView <T>(IEnumerable<T> list)
 {
